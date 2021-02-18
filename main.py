@@ -49,7 +49,17 @@ def check_win():
 
 #This function checks if row or column or diagonal is full with same characters
 def check_tie(mark):
-    pass
+    x_num, o_num = 0, 0
+    for i in range(N):
+        for j in range(N):
+            if grid[i][j] == 'X':
+                x_num = x_num + 1
+            if grid[i][j] == 'O':
+                o_num=o_num+1
+    if o_num+x_num == 9 and not check_win():
+        return True
+    else:
+        return False  
 
 #This function checks if given cell is empty or not 
 def check_empty(i, j):
